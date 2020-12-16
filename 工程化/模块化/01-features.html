@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES Module - 新的特性</title>
+</head>
+<body>
+    <script type="module">
+        console.log('this is es module')
+    </script>
+
+    <!-- 1.ES Module 自定采用严格模式，忽略 ‘use strict'-->
+    <script type="module">
+        console.log(this)
+        console.log(window)
+    </script>
+
+    <!-- 2.每个 ES Module 都是运行在单独的私有作用域中-->
+    <script type="module">
+        var foo = 100;
+        console.log(foo)
+    </script>
+    <script type="module">
+        console.log(foo)
+    </script>
+
+    <!-- 3.ES Module 是通过 CORS 的方式请求外部 JS 模块的 访问外部地址，需要服务支持，不然会产生跨域-->
+    <!-- <script type="module" src="https://libs.baidu.com/jquery@3.4.1/dist/jquery.min.js"></script> -->
+
+    <!-- 4.ES Module 的 script 标签会延迟执行脚本-->
+    <script type="module" src="demo.js"></script>
+    <p>需要显示的内容</p>
+</body>
+</html>
